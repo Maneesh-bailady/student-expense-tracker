@@ -90,3 +90,22 @@ npm i
 npm run dev
 
 ```
+Create a `.env` file with:
+
+```ini
+MONGO_URI=your_mongo_uri
+JWT_SECRET=your_secret_key
+PORT=5000
+```
+📌 To-Do  
+- Add Monthly Statistics 📊  
+- Edit Expense Feature ✏️  
+- Expense Categories 🎯  
+- Dark Mode 🌙  
+
+🤝 Contribution  
+Feel free to fork and contribute to this project! PRs are always welcome 💙  
+
+```html
+<p align="center">Made with ❤️ by Hariharanath</p>
+```
