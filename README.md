@@ -43,7 +43,7 @@
 
 ```bash
 expense-tracker/
-├── client/                 # Frontend
+├── frontend/                 # Frontend
 │   ├── public/
 │   ├── src/
 │   │   ├── components/     # Navbar, ExpenseCard, etc.
@@ -53,7 +53,7 @@ expense-tracker/
 │   │   ├── main.tsx
 │   │   └── ...
 │   └── tailwind.config.js
-├── server/                 # Backend
+├── backend/                 # Backend
 │   ├── controllers/        # authController.js, expenseController.js
 │   ├── models/             # User.js, Expense.js
 │   ├── routes/             # authRoutes.js, expenseRoutes.js
