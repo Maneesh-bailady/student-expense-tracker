@@ -106,6 +106,7 @@ PORT=5000
 🤝 Contribution  
 Feel free to fork and contribute to this project! PRs are always welcome 💙  
 
-```html
-<p align="center">Made with ❤️ by Hariharanath</p>
 ```
+
+```
+<p align="center">Made with ❤️ by Hariharanath</p>
