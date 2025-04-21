@@ -36,7 +36,7 @@ const ExpenseCard = ({
       </div>
     </div>
 
-    {/* Daily limit alert if > ₹100 */}
+ 
     {amount > 100 && (
       <div className="mt-3 px-3 py-2 bg-yellow-100 text-yellow-700 rounded-md text-sm font-medium">
         ⚠️ This expense exceeds ₹100. Be cautious!
