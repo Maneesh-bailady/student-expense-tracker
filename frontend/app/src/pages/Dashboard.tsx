@@ -6,9 +6,20 @@ const Dashboard = () => {
   const [expenses, setExpenses] = useState<any[]>([]);
   const [form, setForm] = useState({ title: "", amount: "", category: "" });
 
+  const monthlyBudget = 5000; // Example budget
+  const monthlySpent = expenses.reduce((acc, expense) => acc + expense.amount, 0);
+
   const fetchExpenses = async () => {
-    const res = await API.get("/expenses");
-    setExpenses(res.data);
+    try {
+      const res = await API.get("/expenses");
+      const formatted = res.data.map((expense: any) => ({
+        ...expense,
+        amountFormatted: `₹${expense.amount.toFixed(2)}`,
+      }));
+      setExpenses(formatted);
+    } catch (err) {
+      console.error("Error fetching expenses:", err);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -65,6 +76,14 @@ const Dashboard = () => {
         </button>
       </form>
 
+      {/* Alert when monthly balance ≤ ₹100 */}
+      {monthlyBudget - monthlySpent <= 100 && (
+        <div className="mb-6 px-4 py-3 bg-red-100 text-red-700 rounded-md text-sm font-semibold">
+          ⚠️ Warning: Your monthly balance is below ₹100. Manage your expenses wisely!
+        </div>
+      )}
+
+      {/* Expenses List */}
       <div className="grid gap-4">
         {expenses.map((expense) => (
           <ExpenseCard key={expense._id} {...expense} onDelete={handleDelete} />
