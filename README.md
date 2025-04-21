@@ -64,3 +64,29 @@ expense-tracker/
 ├── .env
 ├── package.json
 └── README.md
+
+
+
+```
+
+## 🚀 Getting Started
+
+### 📦 Backend Setup
+
+```bash
+cd backend
+npm install
+npx nodemon server.js
+
+```
+
+
+### 📦 Frontend Setup
+
+```bash
+cd frontend
+cd app
+npm i
+npm run dev
+
+```
