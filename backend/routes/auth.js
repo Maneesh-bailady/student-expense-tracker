@@ -1,8 +1,14 @@
-const express = require('express');
-const router = express.Router();
-const { register, login } = require('../controllers/authController');
 
-router.post('/register', register);
-router.post('/login', login);
+router.post('/login', async (req, res) => {
+    // ...existing code for login logic...
 
-module.exports = router;
+    // Create user profile if not exists
+    const userId = user._id; // Assuming user object is retrieved during login
+    const existingProfile = await Profile.findOne({ userId });
+    if (!existingProfile) {
+        await Profile.create({ userId, balance: 1000 }); // Initial balance set to ₹1000
+    }
+
+    res.status(200).json({ message: 'Login successful' });
+});
+// ...existing code...
